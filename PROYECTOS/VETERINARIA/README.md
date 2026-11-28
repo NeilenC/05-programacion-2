@@ -12,7 +12,7 @@ MONLEZUN Neilen - 36734 - NeilenC
 ZOPPOLI Luciano - 37105 - luchozoppo
 
 
-Sistema de gestión para una veterinaria (duenio, mascota y consulta), hecho con Django.
+Sistema de gestión para una veterinaria (personas, mascotas, turnos e historia clínica), hecho con Django.
 
 ## Requisitos
 
@@ -69,10 +69,16 @@ Sistema de gestión para una veterinaria (duenio, mascota y consulta), hecho con
 
 | Carpeta     | Contenido |
 |-------------|-----------|
-| `config/`   | Configuración del proyecto (settings, urls) |
-| `duenio/`   | App de Duenios   |
-| `mascota/`  | App de mascotas  |
-| `consulta/` | App de consultas |
+| `config/`       | Configuración del proyecto (settings, urls). La duración del turno está en `DURACION_TURNO_MINUTOS` |
+| `geografica/`   | Provincia, Departamento y Localidad |
+| `personas/`     | Persona (base), PersonaFisica, PersonaJuridica y Domicilio |
+| `mascotas/`     | Especie, Raza, Mascota y MascotaDuenio (dueños, con responsable principal) |
+| `veterinarios/` | Veterinario (cuenta de usuario opcional) |
+| `turnos/`       | Turno (grilla de horarios fijos y estados) |
+| `atenciones/`   | Atención (historia clínica), Vacuna, VacunaAplicada, Medicamento y Tratamiento |
+| `accesos/`      | Perfil de seguridad del usuario de Django (el usuario es el de Django, con el DNI como nombre de usuario) |
+
+El modelo de datos completo (DER) está en Notion, en la página VETERINARIA.
 
 ## Problemas comunes
 

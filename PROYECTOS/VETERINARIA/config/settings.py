@@ -37,10 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Apps propias del proyecto (las del DER)
     'geografica',
-    'duenio',
-    'mascota',
-    'consulta',
+    'personas',
+    'mascotas',
+    'veterinarios',
+    'turnos',
+    'atenciones',
+    'accesos',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +134,8 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+
+# Duración de cada turno, en minutos. Los turnos empiezan en bloques fijos de
+# este largo (con 60: 9:00, 10:00, 11:00...). Se puede cambiar sin tocar los modelos.
+DURACION_TURNO_MINUTOS = 60
